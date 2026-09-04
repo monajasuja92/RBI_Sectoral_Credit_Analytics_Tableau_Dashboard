@@ -20,19 +20,22 @@ The production-ready dashboard is structured to support rapid executive-level sc
 
 ### 🛠️ Tech Stack & Data Engineering Workflow
 
-### 1. Data Cleaning & Transformation (Power Query)
+### 1. Database Engineering & Optimization (MySQL)
+* **Relational Schema Design:** Engineered a high-performance **Star Schema** directly inside MySQL, structurally isolating master dimensional tables from central transactional logs.
+* **Query Acceleration via Indexing:** Created B-Tree indexes on all core Foreign Keys (`Metric Sector Id`, `Time Id`) across the fact and dimension tables, dramatically reducing join query latency for large reporting datasets.
+* **Abstraction Layers via Views:** Developed specialized relational database **Views** to abstract raw source complexity, join structured dimensions, and pre-aggregate complex attributes into a clean, flat schema optimized for high-speed downstream BI consumption.
 
-* Sourced raw central bank financial spreadsheets.
-* Cleaned headers, adjusted data formats, handled missing records, and optimized data density within the **Power Query Editor**.
-
-### 2. Semantic Data Modeling (Star Schema)
-
-* Abandoned cluttered flat files to construct a relational **Star Schema** data structure to ensure high query performance.
-* Linked isolated attribute dimensional tables (rbi_analytics_view_dim_time and rbi_analytics_view_dim_metric_sector) to a central transactional fact table utilizing precise primary/foreign key mappings.
+### 2. Fine-Tuning & Extraction (Power Query)
+* Connected Power Query directly to the engineered MySQL database views.
+* Sanitized remaining string attributes, parsed specialized calendar periods, and validated data types to ensure zero data ingestion gaps.
 
 ### 3. Business Logic & Interactivity (Tableau)
+* Connected Tableau to the refined dataset, establishing seamless relationship cardinalities.
+* Built responsive **Action Filters** across components, enabling stakeholders to dynamically slice the entire canvas by clicking asset bars.
+* Implemented advanced table calculations to compute YoY% Growth Rates and relative allocation splits over time.
+* **Automated Executive Reporting (Top Right):** Integrated dedicated UI export buttons for **PDF and PowerPoint (PPT)** formats. This feature enables senior stakeholders to instantly capture current filtered analytical views and download them as presentation-ready static slides for credit committee briefings and risk review meetings.
 
-* Developed responsive **Action Filters** across components, enabling stakeholders to dynamically slice the entire canvas simply by interacting directly with the asset allocation layers.
-* Applied advanced table calculations to isolate and evaluate relative market dynamics independent of raw currency weights.
 
-*Developed as part of an advanced financial analytics portfolio project for corporate risk and credit review evaluation.*
+
+
+
