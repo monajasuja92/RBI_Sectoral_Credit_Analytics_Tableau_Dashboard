@@ -42,7 +42,7 @@ The production-ready dashboard is structured to support rapid executive-level sc
 
 ## 📷 Dashboard Preview
 
-![RBI Sectoral Credit Dashboard Preview]<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a47c17e8-e596-4882-8f2d-0c869216a28e" />
+RBI Sectoral Credit Dashboard Preview<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a47c17e8-e596-4882-8f2d-0c869216a28e" />
 
 
 
