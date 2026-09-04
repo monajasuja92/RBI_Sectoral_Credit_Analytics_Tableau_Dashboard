@@ -1,3 +1,6 @@
+## 🔗 Interactive Live Dashboard
+👉 **[View the Live Interactive Dashboard on Tableau Public](YOUR_TABLEAU_PUBLIC_DASHBOARD_URL)**
+
 ### RBI Sectoral Credit Allocation & Financial Performance Dashboard
 
 An institutional-grade, interactive analytics dashboard engineered in Tableau to analyze the Reserve Bank of India (RBI) sectoral banking credit deployment and Year-over-Year (YoY%) growth metrics from 2018 to 2026. This project serves as an executive-level portfolio piece tracking macroeconomic credit risk and deployment patterns. 
@@ -38,4 +41,8 @@ The production-ready dashboard is structured to support rapid executive-level sc
 
 
 
+## 📷 Dashboard Preview
+
+![RBI Sectoral Credit Dashboard Preview](<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/28756dac-0e12-4f35-802e-f5c568167128" />
+)
 
