@@ -1,5 +1,4 @@
-## 🔗 Interactive Live Dashboard
-👉 **[View the Live Interactive Dashboard on Tableau Public](YOUR_TABLEAU_PUBLIC_DASHBOARD_URL)**
+
 
 ### RBI Sectoral Credit Allocation & Financial Performance Dashboard
 
