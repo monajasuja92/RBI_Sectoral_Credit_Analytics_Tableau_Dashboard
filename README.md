@@ -1,5 +1,5 @@
 * **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_MONA/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-   ## 📁 Raw Data Dictionary
+   ##  Raw Data Dictionary
 * **`Deployment of Bank Credit by Major Sectors.xlsx`**: Macroeconomic historical data source tracking overall sectoral volume distributions across the 47 processed categories.
 * **`RBI_ASSET_QUALITY_RAW.xlsx`**: Core underlying dataset tracking volumetric performance variations used to compute timeline growth velocity.
 
@@ -9,14 +9,16 @@
 
 An institutional-grade, interactive analytics dashboard engineered in Tableau to analyze the Reserve Bank of India (RBI) sectoral banking credit deployment and Year-over-Year (YoY%) growth metrics from 2018 to 2026. This project serves as an executive-level portfolio piece tracking macroeconomic credit risk and deployment patterns. 
 
-### 🎯 Business Problem Solved: Mitigating Portfolio Concentration & Credit Risk
+###  Business Problem Solved: Mitigating Portfolio Concentration & Credit Risk
+ ## 💡 Key Analytical Insights
+Based on the integrated SQL metrics and interactive matrix validations, the portfolio surfaces three primary macroeconomic trends between 2018 and 2026:
 
-In institutional banking, unmonitored capital concentration in a single sector exposes a financial firm to extreme systemic risk if that market undergoes a sudden downturn. This analytics framework solves two critical financial risk management issues: 
+* **The 2026 Credit Squeeze:** Total credit deployment shows a sharp deceleration in volume growth going into the final 2026 window. This suggests a macro-level tightening of bank lending criteria across major industrial segments.
+* **Priority Sector Shifts:** By filtering through the "Lending Type" control, the data reveals that Priority Sector Lending (PSL)—specifically housing and small enterprise allocations—remained resilient even when standard commercial corporate credit flatlined.
+* **Concentration Risks:** A deep dive into the Top 10 cohort matrix shows that the bulk of India's banking credit remains heavily concentrated within three core asset classes, making the overall portfolio highly sensitive to systemic shocks in those specific industries.
 
-1. **Identifying High-Risk Concentration Risk:** The dashboard acts as an early-warning system by isolating exactly where credit lines are overly concentrated. For instance, it reveals that a massive portion of total credit is heavily exposed to the **Services** and **Personal Loan** sectors, signaling a high-beta consumer dependencies risk profile.
-2. **Detecting Liquidity Inefficiencies via YoY% Volatility:** By mapping YoY% growth fluctuations directly over absolute deployment volumes, risk managers can instantly pinpoint asset categories experiencing destabilizing credit expansion or sudden contraction (such as the market inflection points seen in 2024 and 2025). This allows underwriters to proactively tighten or loosen credit policy guidelines ahead of market shifts.
 
-### 📊 Core Features & UI Layout
+###  Core Features & UI Layout
 
 The production-ready dashboard is structured to support rapid executive-level scanning via a balanced grid layout: 
 
@@ -25,7 +27,7 @@ The production-ready dashboard is structured to support rapid executive-level sc
 * **Macro Credit Trends & YoY% Growth (Bottom Left):** An advanced **Dual-Axis Combination Chart** plotting absolute credit volumes against a calculated percentage trajectory line.
 * **Financial Performance Matrix (Top Left):** A granular, multi-dimensional tabular text grid delivering exact historical valuations across reporting intervals.
 
-### 🛠️ Tech Stack & Data Engineering Workflow
+###  Tech Stack & Data Engineering Workflow
 
 ### 1. Database Engineering & Optimization (MySQL)
 * **Relational Schema Design:** Engineered a high-performance **Star Schema** directly inside MySQL, structurally isolating master dimensional tables from central transactional logs.
@@ -45,7 +47,7 @@ The production-ready dashboard is structured to support rapid executive-level sc
 
 
 
-## 📷 Dashboard Preview
+##  Dashboard Preview
 
 RBI Sectoral Credit Dashboard Preview<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/785295ba-2edc-409b-b2bf-a436099fdf14" />
 
