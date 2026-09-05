@@ -1,4 +1,4 @@
-* **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_DASHBOARD_MONA/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+* **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_MONA/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 
 ### RBI Sectoral Credit Allocation & Financial Performance Dashboard
@@ -43,7 +43,8 @@ The production-ready dashboard is structured to support rapid executive-level sc
 
 ## 📷 Dashboard Preview
 
-RBI Sectoral Credit Dashboard Preview<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a47c17e8-e596-4882-8f2d-0c869216a28e" />
+RBI Sectoral Credit Dashboard Preview<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/785295ba-2edc-409b-b2bf-a436099fdf14" />
+
 
 
 
