@@ -10,7 +10,7 @@
 An institutional-grade, interactive analytics dashboard engineered in Tableau to analyze the Reserve Bank of India (RBI) sectoral banking credit deployment and Year-over-Year (YoY%) growth metrics from 2018 to 2026. This project serves as an executive-level portfolio piece tracking macroeconomic credit risk and deployment patterns. 
 
 ###  Business Problem Solved: Mitigating Portfolio Concentration & Credit Risk
- ## 💡 Key Analytical Insights
+ ## Key Analytical Insights
 Based on the integrated SQL metrics and interactive matrix validations, the portfolio surfaces three primary macroeconomic trends between 2018 and 2026:
 
 * **The 2026 Credit Squeeze:** Total credit deployment shows a sharp deceleration in volume growth going into the final 2026 window. This suggests a macro-level tightening of bank lending criteria across major industrial segments.
