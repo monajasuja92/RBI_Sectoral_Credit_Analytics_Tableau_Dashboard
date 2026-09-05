@@ -1,1 +1,55 @@
+use rbi_analytics;
+select * from dim_metric_sector;
+select * from dim_time;
+select * from fact_financial_analytics;
+select * from staging_asset_quality;
+select * from staging_sectoral_credit;
+INSERT INTO fact_financial_analytics 
+    (time_id, metric_sector_id, metric_percentage, amount_in_crores)
+SELECT 
+    dt.time_id,
+    dms.metric_sector_id,
+    aq.metric_percentage,
+    NULL -- Leaves amount empty because Asset Quality doesn't have Crores
+FROM staging_asset_quality aq
+INNER JOIN dim_time dt 
+    ON aq.start_year = dt.start_year 
+    AND aq.end_year = dt.end_year
+INNER JOIN dim_metric_sector dms 
+    ON aq.metric_name = dms.item_name;
+    
+    INSERT INTO fact_financial_analytics 
+    (time_id, metric_sector_id, metric_percentage, amount_in_crores)
+SELECT 
+    dt.time_id,
+    dms.metric_sector_id,
+    NULL, -- Leaves percentage empty because Sectoral Credit doesn't have %
+    sc.credit_amount_in_crores
+FROM staging_sectoral_credit sc
+INNER JOIN dim_time dt 
+    ON sc.start_year = dt.start_year 
+    AND sc.end_year = dt.end_year
+INNER JOIN dim_metric_sector dms 
+    ON sc.sector_name = dms.item_name;
+    select * from fact_financial_analytics;
+    
+    create view vw_fact_financial_analytics as
+    select fact_id,time_id,metric_sector_id,metric_percentage,amount_in_crores
+    from fact_financial_analytics;
+    select * from dim_metric_sector;
+select * from dim_time;
+
+create view vw_dim_metric_sector as
+select metric_sector_id,item_name,source_table
+from dim_metric_sector;
+
+create view vw_dim_time as
+select time_id,start_year,end_year
+from dim_time;
+
+
+
+
+
+
 
