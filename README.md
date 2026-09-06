@@ -6,10 +6,10 @@ The full lifecycle of this analytics framework can be accessed directly using th
   *A complete 4-slide presentation summarizing the business case, findings, database architecture, and performance logic.*
 *  **[Database Architecture: View Star-Schema ER Diagram (PNG)](./RBI_ANALYTICS_STAR_SCHEMA_IN_SQL.png)**  
   *The physical entity-relationship model mapping the relational data warehouse connection vectors.*
-* **[View Engineering Script: Open Database Schema (SQL)](./rbi_analytics_view_engineering.sql)**  
+* **[View Engineering: Open Database Schema (SQL)](./rbi_analytics_view_engineering.sql)**  
   *The ETL code script establishing our core database tables, dimensional normalization rules, and semantic view layers.*
-*  **[KPI Summary Logs: Open Server-Side Queries (SQL Folder)](./SQL%20KPI)**  
-  *The automated stored procedures, window functions, and pre-computed aggregation query logic scripts.*
+*  **[KPI Summary: Open Queries (SQL Folder)](./SQL%20KPI)**  
+  *The stored procedures, window functions, and aggregation query logic scripts.*
 
    ##  Raw Data Dictionary
 * **`Deployment of Bank Credit by Major Sectors.xlsx`**: Macroeconomic historical data source tracking overall sectoral volume distributions across the 47 processed categories.
