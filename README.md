@@ -1,7 +1,11 @@
 * **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_MONA/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-##  Case Study Presentation & Technical Artifacts
+
+* ## Case Study Presentation & Technical Artifacts
+
 The full lifecycle of this analytics framework can be accessed directly using the quick links below:
 
+* 📄 **[Business Requirements Document: Open Framework Strategy (BRD)](./Business%20Requirements%20Document%20RBI%20ANALYTICS.md)**  
+  *The formal project strategy framework outlining the core banking challenges, user tracking personas, and system data governance protocols.*
 * **[Executive Briefing Deck: Download Presentation Slides (PPTX)](./RBI_analytics_final_ppt.pptx)**  
   *A complete 4-slide presentation summarizing the business case, findings, database architecture, and performance logic.*
 *  **[Database Architecture: View Star-Schema ER Diagram (PNG)](./RBI_ANALYTICS_STAR_SCHEMA_IN_SQL.png)**  
