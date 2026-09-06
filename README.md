@@ -4,7 +4,7 @@
 
 The full lifecycle of this analytics framework can be accessed directly using the quick links below:
 
-* 📄 **[Business Requirements Document: Open Framework Strategy (BRD)](./Business%20Requirements%20Document%20RBI%20ANALYTICS.md)**  
+* 📄 **[Business Requirements Document: Open Framework Strategy (BRD)](https://github.com/monajasuja92/RBI_Sectoral_Credit_Analytics_Tableau_Dashboard/blob/main/Business%20Requirements%20Document%20RBI%20ANALYTICS.pdf)**  
   *The formal project strategy framework outlining the core banking challenges, user tracking personas, and system data governance protocols.*
 * **[Executive Briefing Deck: Download Presentation Slides (PPTX)](./RBI_analytics_final_ppt.pptx)**  
   *A complete 4-slide presentation summarizing the business case, findings, database architecture, and performance logic.*
