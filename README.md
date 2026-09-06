@@ -1,9 +1,15 @@
 * **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_MONA/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-* 📊 **[Executive Briefing Deck: Download Presentation Slides (PPTX)](./RBI_analytics_final_ppt.pptx)**  
-*A complete 4-slide executive presentation briefing summarizing the business problem, key analytical findings, physical database architecture, and server-side query performance rules.*
+##  Case Study Presentation & Technical Artifacts
+The full lifecycle of this analytics framework can be accessed directly using the quick links below:
 
-🗄️ **[Database Architecture: View Star-Schema ER Diagram (PNG)](./RBI_ANALYTICS_STAR_SCHEMA_IN_SQL.png)**  
-*The physical entity-relationship model mapping the relational data warehouse connection vectors between our core central table (`fact_financial_analytics`) and our dimensions (`dim_time`, `dim_metric_sector`).*
+* **[Executive Briefing Deck: Download Presentation Slides (PPTX)](./RBI_analytics_final_ppt.pptx)**  
+  *A complete 4-slide presentation summarizing the business case, findings, database architecture, and performance logic.*
+*  **[Database Architecture: View Star-Schema ER Diagram (PNG)](./RBI_ANALYTICS_STAR_SCHEMA_IN_SQL.png)**  
+  *The physical entity-relationship model mapping the relational data warehouse connection vectors.*
+* **[View Engineering Script: Open Database Schema (SQL)](./rbi_analytics_view_engineering.sql)**  
+  *The ETL code script establishing our core database tables, dimensional normalization rules, and semantic view layers.*
+*  **[KPI Summary Logs: Open Server-Side Queries (SQL Folder)](./SQL%20KPI)**  
+  *The automated stored procedures, window functions, and pre-computed aggregation query logic scripts.*
 
    ##  Raw Data Dictionary
 * **`Deployment of Bank Credit by Major Sectors.xlsx`**: Macroeconomic historical data source tracking overall sectoral volume distributions across the 47 processed categories.
