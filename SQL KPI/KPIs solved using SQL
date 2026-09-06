@@ -1,0 +1,81 @@
+USE rbi_analytics;
+#Query 1: Macro Credit Volume Trends & YoY% Growth Analysis
+select * from dim_time;
+select * from fact_financial_analytics;
+select 
+*,CONCAT(ROUND((current_yr_credit-previous_yr_credit)/previous_yr_credit*100,1),"%") as yoy
+from(
+with T1 as(
+select 
+t.start_year as yr,sum(f.amount_in_crores)as current_yr_credit 
+from dim_time as t 
+join fact_financial_analytics as f
+on t.time_id=f.time_id
+where amount_in_crores is not NULL
+group by 1)
+select
+ yr,current_yr_credit,lag(current_yr_credit)over(order by yr asc)as previous_yr_credit
+ from T1)T2;
+
+ # Query 2: Top 10 Sector Credit Breakdown 
+ select * from dim_metric_sector;
+ select * from fact_financial_analytics;
+with T1 as(
+ select 
+ ms.item_name as sector,sum(f.amount_in_crores)as credit_amount
+ from dim_metric_sector as ms
+ join 
+ fact_financial_analytics as f
+ on ms.metric_sector_id=f.metric_sector_id
+ where f.amount_in_crores is not NULL
+ group by 1 
+ order by 2 desc)
+ select sector,
+ case when credit_amount>=1000000
+ then concat(round(credit_amount/1000000,2),"M") 
+ end as credit_amount_in_millions
+ from T1;
+
+# Query 3: Dynamic Performance Matrix
+#stored procedure to get the top N values as per the user's requirement
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `dynamic_performance_metric_by credit`(IN c1 INT)
+BEGIN
+ -- Stage 1: Grouping credit  by sector and year
+WITH T1 AS (
+SELECT 
+ t.start_year AS yr,ms.item_name AS sector,
+ SUM(f.amount_in_crores) AS total_credit
+ FROM dim_metric_sector AS ms
+  INNER JOIN fact_financial_analytics AS f ON ms.metric_sector_id = f.metric_sector_id
+ INNER JOIN dim_time AS t ON f.time_id = t.time_id
+ WHERE f.amount_in_crores IS NOT NULL
+  GROUP BY t.start_year, ms.item_name
+    ),
+ -- Stage 2: rank 
+ T2 AS (
+ SELECT 
+   yr, sector,total_credit,
+     DENSE_RANK() OVER (PARTITION BY yr ORDER BY total_credit DESC) AS rnk
+    FROM T1
+    )
+ -- Stage 3:display the specific rank requested by the parameter (c1)
+SELECT 
+yr,sector, total_credit, rnk
+FROM T2 
+ WHERE rnk = c1
+ ORDER BY yr ASC, total_credit DESC;
+END $$
+
+DELIMITER ;
+
+#Query 4:TOTAL CREDIT KPI
+
+select concat(round(sum( amount_in_crores)/1000000000,2),"B")as total_credit from fact_financial_analytics;
+
+#Query 5: #total count of sectors
+select distinct count(item_name)as total_sectors from dim_metric_sector;
+
+
+ 
