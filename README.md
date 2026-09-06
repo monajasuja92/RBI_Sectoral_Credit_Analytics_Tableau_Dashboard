@@ -1,4 +1,10 @@
 * **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_MONA/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+* 📊 **[Executive Briefing Deck: Download Presentation Slides (PPTX)](./RBI_analytics_final_ppt.pptx)**  
+*A complete 4-slide executive presentation briefing summarizing the business problem, key analytical findings, physical database architecture, and server-side query performance rules.*
+
+🗄️ **[Database Architecture: View Star-Schema ER Diagram (PNG)](./RBI_ANALYTICS_STAR_SCHEMA_IN_SQL.png)**  
+*The physical entity-relationship model mapping the relational data warehouse connection vectors between our core central table (`fact_financial_analytics`) and our dimensions (`dim_time`, `dim_metric_sector`).*
+
    ##  Raw Data Dictionary
 * **`Deployment of Bank Credit by Major Sectors.xlsx`**: Macroeconomic historical data source tracking overall sectoral volume distributions across the 47 processed categories.
 * **`RBI_ASSET_QUALITY_RAW.xlsx`**: Core underlying dataset tracking volumetric performance variations used to compute timeline growth velocity.
