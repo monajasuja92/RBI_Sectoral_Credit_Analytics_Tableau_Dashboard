@@ -25,24 +25,31 @@ The full lifecycle of this analytics framework can be accessed directly using th
 
 An institutional-grade, interactive analytics dashboard engineered in Tableau to analyze the Reserve Bank of India (RBI) sectoral banking credit deployment and Year-over-Year (YoY%) growth metrics from 2018 to 2026. This project serves as an executive-level portfolio piece tracking macroeconomic credit risk and deployment patterns. 
 
-###  Business Problem Solved: Mitigating Portfolio Concentration & Credit Risk
- ## Key Analytical Insights
-Based on the integrated SQL metrics and interactive matrix validations, the portfolio surfaces three primary macroeconomic trends between 2018 and 2026:
-
-* **The 2026 Credit Squeeze:** Total credit deployment shows a sharp deceleration in volume growth going into the final 2026 window. This suggests a macro-level tightening of bank lending criteria across major industrial segments.
-* **Priority Sector Shifts:** By filtering through the "Lending Type" control, the data reveals that Priority Sector Lending (PSL)—specifically housing and small enterprise allocations—remained resilient even when standard commercial corporate credit flatlined.
-* **Concentration Risks:** A deep dive into the Top 10 cohort matrix shows that the bulk of India's banking credit remains heavily concentrated within three core asset classes, making the overall portfolio highly sensitive to systemic shocks in those specific industries.
-
+###  Project Case Study: Turning Messy Central Bank Tables into Actionable Risk Insights
+1. The Real-World Banking Problem Solved
+ The data is released in wide, disconnected yearly tables. Even worse, the files contain an analytical trap: they mix completely different financial metrics together. Half of the data is calculated as a % of customer bank deposits (which matters for internal bank liquidity), while the other half shifts mid-row to a % of the country’s GDP (which matters for macroeconomics).If an analyst charts these raw rows side-by-side, it creates an optical illusion that leads to massive calculation errors. Because fixing this manually in Excel takes days, executive leadership historically received risk reports long after the data became public, destroying their ability to react quickly to market shifts.
+2. How We Solved It (The Engineering Strategy)To fix this friction, we bypassed manual data cleanup and built a programmatic, automated pipeline:The Relational Model (Star Schema):
+    We broke down the messy sheets into an organized backend database consisting of a centralized Fact Table connected to distinct Time and Sector Dimensions. This allows the data to scale seamlessly without duplicate rows or mapping errors.
+   The "Boundary Wall" Math Rule:
+   Inside Tableau, we engineered smart, conditional logic formulas to separate the overlapping percentages. By establishing a numeric boundary threshold, the system automatically routes high metrics (over 65%) into a Banking Liquidity View and low metrics into a Macro GDP View.
+   The Two-Page App Interface: We built an interactive dashboard equipped with top navigation buttons. It splits the conflicting visual metrics onto two separate tabs so executives can switch between internal bank health and the broader economy in under 5 seconds.
+3. Key Financial Insights DiscoveredBy cleaning up the 9-year historical horizon (2018–2026), our interactive visualizations revealed critical economic trends:The 2026 Credit Slowdown:
+   While absolute lending volume appears massive, our dual-axis velocity line reveals a sharp deceleration heading into 2026. This indicates that banks heavily tightened their lending criteria, pulling back on risk.Priority Lending as a Safe Haven: By filtering through the global controls, we discovered that government-mandated Priority Sector Lending (PSL)—especially housing and small enterprise allocations—remained incredibly stable and resilient even during economic phases when standard commercial corporate credit flatlined.
+   The Systemic Debt Footprint:
+    Our macro view exposed a long-term 54.61% Average Credit-to-GDP Share. This reveals exactly how deeply the broader Indian economy depends on commercial bank credit to fuel its annual GDP growth.
+ 4. Professional Analyst Recommendations
+      Based on these insights, an analyst would deliver the following strategic recommendations to bank leadership:
+      Implement a Micro-Sector Alert Trigger: Because credit velocity slowed down heavily in 2026, the risk team should configure automated color-shaded indicators on our Performance Matrix to immediately red-flag any micro-sectors showing consecutive reporting gaps.
+      Optimize Risk Appetite via Safe Assets: Since bank investments are heavily tied up in risk-free government bonds, leadership should utilize our dashboard's asset-split charts to identify when to safely rotate capital into high-yield corporate debentures as macro growth starts to recover.
+      Automate the Data Pipeline Structure: To completely eliminate manual overhead, this dashboard should be connected to an automated scraper script that instantly pushes new annual RBI data batches straight into our Fact table schema the moment they are published.
 
 ###  Core Features & UI Layout
+To resolve the data split problem, the user interface is structured as an interactive, two-page corporate application layout. By maintaining identical font hierarchies, right-hand filter panels, and a dark top navigation bar, both dashboards feel like a unified, professional software system.
 
-The production-ready dashboard is structured to support rapid executive-level scanning via a balanced grid layout: 
-
-* **Executive KPI Metric Block:** High-impact metric card rendering the **Total Credit** volume figure globally.
-* **Asset Allocation Heatmap (Top Right):** A horizontal ranking chart evaluating relative credit weights across sectors, applying a high-contrast color gradient to highlight dominant risk categories.
-* **Macro Credit Trends & YoY% Growth (Bottom Left):** An advanced **Dual-Axis Combination Chart** plotting absolute credit volumes against a calculated percentage trajectory line.
-* **Financial Performance Matrix (Top Left):** A granular, multi-dimensional tabular text grid delivering exact historical valuations across reporting intervals.
-
+Dashboard Page 1:
+Banking Operations & Liquidity ViewThis view focuses entirely inward on internal banking health, charting metrics calculated strictly as a percentage of customer deposits.Executive Summary Cards (Top Left): Displays two prominent metrics—the 1.95B Total Systemic Value and a unique count of 47 Active Reporting Sectors—giving leadership an immediate snapshot of data scale.Dual-Axis Growth Trend (Center Left): Combines absolute loan volumes (Bars) against yearly growth speed (Line). This layout allows risk teams to instantly see that while total volume is high, the actual speed of growth plummeted to -84.2% heading into 2026.Dynamic Performance Matrix (Bottom Grid): A comprehensive grid showing exactly how many rows of data exist per sector. It uses a clean tabular format to act as a visual data auditor for reporting completeness.
+Dashboard Page 2:
+Macroeconomic GDP ViewThis view shifts focus entirely outward, tracking how bank lending impacts the broader country using metrics calculated as a percentage of national GDP.Macro Exposure Scorecard (Top Left): Features a large, bold KPI block displaying the long-term 54.61% Average Credit-to-GDP baseline to track overall market leverage.GDP Horizon Trend Lines (Center Canvas): Clean, separate time-series bar and line charts tracking credit and investment shares. Because the numbers sit below our custom 22.0% filtering boundary wall, Tableau plots them safely without overlapping text.Regulatory PSL Share Chart (Top Right): An interactive pie chart that cleanly isolates government-mandated Priority Sector Lending (0.11B) away from standard commercial lending blocks (1.84B), satisfying compliance workflows instantly.Global Interaction Sidebar (Far Right): Houses the dark web application Navigation Toggle alongside synchronized Lending Type checkboxes so that a filter clicked on Page 1 automatically updates the visuals on Page 2.
 ###  Tech Stack & Data Engineering Workflow
 
 ### 1. Database Engineering & Optimization (MySQL)
