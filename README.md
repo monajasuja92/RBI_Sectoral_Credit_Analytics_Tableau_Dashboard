@@ -1,4 +1,4 @@
-* **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_MONA/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+* **Interactive Dashboard:** View the live project on [Tableau Public](https://public.tableau.com/views/RBI_ANALYTICS_MONA/BankingOperationsview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 * ## Case Study Presentation & Technical Artifacts
 
